@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Streaming</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DutApp Factory Live Streaming</h1>
+            <img src="assets/images/logo.png" alt="Logo" />
+        </header>
+        <main>
+            <div class="countdown">
+                <p>Starting in:</p>
+                <div id="countdown-timer">00:00:00</div>
+            </div>
+
+            @*<div class="video-player">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+            </div>*@
+
+        <div class="video-player">
+            <iframe id="live-stream-video" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+
+            @*<video id="live-stream-video" controls>
+                <source src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>*@
+            <stream width="100%" height="100%" src="e7bd2dd67e0f8860b4ae81e33a966049" preload="metadata" controls poster="https://videodelivery.net/e7bd2dd67e0f8860b4ae81e33a966049/thumbnails/thumbnail.jpg?time=31s&height=720" default-text-track="en" customer-domain-prefix="customer-eq7kiuol0tk9chox"></stream>
+            <script data-cfasync="false"
+                    defer=""
+                    type="text/javascript"
+                    src="https://customer-eq7kiuol0tk9chox.cloudflarestream.com/embed/sdk-iframe-integration.fla9.latest.js?video=e7bd2dd67e0f8860b4ae81e33a966049"></script>
+        </div>
+
+
+            <div class="chat">
+                <h2>Live Chat</h2>
+                <div id="chat-messages"></div>
+                <input type="text" id="message-input" placeholder="Please Type your message..." />
+                <button class="btn btn-info" id="send-button">Send</button>
+            </div>
+        </main>
+    </div>
+    <script src="~/js/countdown.js"></script>
+    <script src="~/js/chat.js"></script>
+</body>
+</html>
